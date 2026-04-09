@@ -19,6 +19,3 @@ Tech Stack
 - **IDE:** Android Studio
 - **Database:** Firebase
 - **Platform:** Android
-
-## 👥 Team
-Built and led by Tanusha Kathwa as a team project for IGDTUW students.
