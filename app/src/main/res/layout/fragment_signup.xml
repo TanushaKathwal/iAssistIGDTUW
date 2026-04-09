@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Top White Area -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topSection"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/formScroll"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/collegeLogo"
+            android:layout_width="170dp"
+            android:layout_height="135dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="College Logo"
+            android:src="@drawable/ic"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/signupHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:text="Signup"
+            android:textColor="@color/green"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/collegeLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/collegeLogo"
+            app:layout_constraintTop_toTopOf="@id/collegeLogo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Scrollable Form Section -->
+    <ScrollView
+        android:id="@+id/formScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#29741D"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/topSection"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="30dp">
+
+            <!-- Name -->
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/roundedtextbox_bg"
+                android:hint="Enter Full Name"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <!-- Email -->
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/roundedtextbox_bg"
+                android:hint="Enter Email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <!-- Password -->
+            <EditText
+                android:id="@+id/editPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/roundedtextbox_bg"
+                android:hint="Create Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <!-- Re-enter Password -->
+            <EditText
+                android:id="@+id/editRePassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/roundedtextbox_bg"
+                android:hint="Re-enter Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <!-- Spinner 1 -->
+            <Spinner
+                android:id="@+id/spinnerQuestion1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/roundedtextbox_bgarrow"
+                android:padding="4dp" />
+
+            <!-- Answer 1 -->
+            <EditText
+                android:id="@+id/editAnswer1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/roundedtextbox_bg"
+                android:hint="Answer 1"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <!-- Spinner 2 -->
+            <Spinner
+                android:id="@+id/spinnerQuestion2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/roundedtextbox_bgarrow"
+                android:padding="4dp" />
+
+            <!-- Answer 2 -->
+            <EditText
+                android:id="@+id/editAnswer2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/roundedtextbox_bg"
+                android:hint="Answer 2"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="#999999"
+                android:textSize="16sp" />
+
+            <!-- Signup Button -->
+            <Button
+                android:id="@+id/signupButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="250dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Signup"
+                android:textColor="#29741D"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

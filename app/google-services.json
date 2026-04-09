@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1036964188519",
+    "project_id": "iassistigdtuw",
+    "storage_bucket": "iassistigdtuw.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036964188519:android:4ccc4e87a68ce974929fc2",
+        "android_client_info": {
+          "package_name": "com.example.iassistdatabase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnK_vxBFMwBNEloQreakL0-3Zvq8ttbSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

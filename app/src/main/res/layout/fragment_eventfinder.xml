@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="40dp">
+
+    <!-- Title Section with Image and Text -->
+    <LinearLayout
+        android:id="@+id/titleSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="iglogo"
+            android:src="@drawable/eventfinder_logo" />
+
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:text="Event Finder"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Categories (2 in one line) -->
+    <GridLayout
+        android:id="@+id/eventTypeRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:columnCount="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleSection">
+
+        <RadioButton
+            android:id="@+id/radioTechnical"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Technical"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioCultural"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Cultural"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioLiterary"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Literary"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioSports"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Sports"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioSociety"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Society"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioOthers"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Others"
+            android:textSize="20sp" />
+    </GridLayout>
+
+    <!-- Filter Button -->
+    <Button
+        android:id="@+id/filterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="65dp"
+        android:text="Discover Events"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventTypeRadioGroup" />
+
+    <!-- Scrollable Content starts here -->
+    <ScrollView
+        android:id="@+id/scrollViewContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filterButton">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Image Slider -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/eventImageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="visible" />
+
+            <!-- Dots Indicator -->
+            <LinearLayout
+                android:id="@+id/dotsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <!-- Description Text (NO scrollbars here) -->
+            <TextView
+                android:id="@+id/eventDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="start"
+                android:importantForAccessibility="no"
+                android:letterSpacing="0.02"
+                android:lineSpacingExtra="4dp"
+                android:overScrollMode="never"
+                android:padding="12dp"
+                android:scrollbars="none"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

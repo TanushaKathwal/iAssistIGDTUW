@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <!-- Home -->
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.iassistdatabase.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- Notifications -->
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.iassistdatabase.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <!-- Signup -->
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.iassistdatabase.ui.signup.SignupFragment"
+        android:label="Signup"
+        tools:layout="@layout/fragment_signup">
+
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/signupFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Forgot Password -->
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.iassistdatabase.ui.forgotpassword.ForgotPasswordFragment"
+        android:label="Forgot Password?"
+        tools:layout="@layout/fragment_forgotpassword">
+
+    <action
+        android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+        app:destination="@id/loginFragment" />
+</fragment>
+
+<!--    &lt;!&ndash; Reset Password &ndash;&gt;-->
+<!--    <fragment-->
+<!--        android:id="@+id/resetPasswordFragment"-->
+<!--        android:name="com.example.iassistdatabase.ui.resetpassword.ResetPasswordFragment"-->
+<!--        android:label="Reset Password"-->
+<!--        tools:layout="@layout/fragment_resetpassword" >-->
+<!--    <action-->
+<!--        android:id="@+id/action_resetPasswordFragment_to_loginFragment"-->
+<!--        app:destination="@id/resetPasswordFragment" />-->
+<!--        <argument-->
+<!--            android:name="userEmail"-->
+<!--            app:argType="string" />-->
+<!--    </fragment>-->
+
+    <!-- Login -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.iassistdatabase.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+
+    <!-- Profile Entry -->
+    <fragment
+        android:id="@+id/profileEntryFragment"
+        android:name="com.example.iassistdatabase.ui.profile.ProfileEntryFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_dummy">
+
+        <action
+            android:id="@+id/action_entry_to_profile"
+            app:destination="@id/profileFragment" />
+
+        <action
+            android:id="@+id/action_entry_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <!-- Profile -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.iassistdatabase.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" >
+
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <!-- Event Finder -->
+    <fragment
+        android:id="@+id/navigation_eventfinder"
+        android:name="com.example.iassistdatabase.ui.eventfinder.EventFinderFragment"
+        android:label="EventFinder"
+        tools:layout="@layout/fragment_eventfinder" />
+
+    <!-- Lost and Found -->
+    <fragment
+        android:id="@+id/navigation_lostandfound"
+        android:name="com.example.iassistdatabase.ui.lostandfound.LostandFoundFragment"
+        android:label="Lost and Found"
+        tools:layout="@layout/fragment_lostandfound" >
+
+    <action
+        android:id="@+id/action_lostandFoundFragment_to_reportLostFoundFragment"
+        app:destination="@id/navigation_reportlostfound" />
+    </fragment>
+
+    <!-- Report Lost Found -->
+    <fragment
+        android:id="@+id/navigation_reportlostfound"
+        android:name="com.example.iassistdatabase.ui.reportlostfound.ReportLostFoundFragment"
+        android:label="Report Lost Found"
+        tools:layout="@layout/fragment_report_lost_found" />
+
+    <!-- Room Finder -->
+    <fragment
+        android:id="@+id/navigation_roomfinder"
+        android:name="com.example.iassistdatabase.ui.roomfinder.RoomFinderFragment"
+        android:label="Room Finder"
+        tools:layout="@layout/fragment_roomfinder" />
+
+    <!-- SGPA Calculator -->
+    <fragment
+        android:id="@+id/navigation_sgpacalculator"
+        android:name="com.example.iassistdatabase.ui.sgpacalculator.SgpaCalculatorFragment"
+        android:label="SGPA Calculator"
+        tools:layout="@layout/fragment_sgpacalculator" />
+
+    <!-- Goal Tracker -->
+    <fragment
+        android:id="@+id/navigation_goaltracker"
+        android:name="com.example.iassistdatabase.ui.goaltracker.GoalTrackerFragment"
+        android:label="Goal Tracker"
+        tools:layout="@layout/fragment_goaltracker" >
+
+        <action
+            android:id="@+id/action_goalTrackerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <!-- Academic Corner -->
+    <fragment
+        android:id="@+id/navigation_academiccorner"
+        android:name="com.example.iassistdatabase.ui.academiccorner.AcademicCornerFragment"
+        android:label="Academic Corner"
+        tools:layout="@layout/fragment_academiccorner" />
+
+    <!-- Circulars -->
+    <fragment
+        android:id="@+id/navigation_circulars"
+        android:name="com.example.iassistdatabase.ui.circulars.CircularsFragment"
+        android:label="Circulars"
+        tools:layout="@layout/fragment_circulars" />
+
+    <!-- Life in Motion -->
+    <fragment
+        android:id="@+id/navigation_lifeinmotion"
+        android:name="com.example.iassistdatabase.ui.lifeinmotion.LifeInMotionFragment"
+        android:label="Life in Motion"
+        tools:layout="@layout/fragment_lifeinmotion" />
+
+</navigation>
